@@ -215,6 +215,8 @@ class TWB(DatasourceFileInterface, TableauXmlFile):
             lh.write(final_string)
             lh.close()
 
+            return save_filename #6.0.1 change
+
         except IOError:
             self.log("Error: File '{} cannot be opened to write to".format(filename_no_extension + file_extension))
             self.end_log_block()
@@ -300,6 +302,8 @@ class TDS(DatasourceFileInterface, TableauXmlFile):
                 final_string = ds_string
             lh.write(final_string)
             lh.close()
+
+            return save_filename  # 6.0.1 change
 
         except IOError:
             self.log("Error: File '{} cannot be opened to write to".format(filename_no_extension + file_extension))
